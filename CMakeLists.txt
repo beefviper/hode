@@ -4,7 +4,8 @@ cmake_minimum_required(VERSION 3.0)
 
 include(FindPkgConfig)
 
-set(CMAKE_CXX_FLAGS "-g -Wall -pedantic -MMD ${CMAKE_CXX_FLAGS}")
+# set(CMAKE_CXX_FLAGS "-g -Wall -pedantic -MMD ${CMAKE_CXX_FLAGS}")
+
 if(VITA)
   set(ENV{PKG_CONFIG_PATH} "$ENV{VITASDK}/arm-vita-eabi/lib/pkgconfig")
 endif(VITA)
