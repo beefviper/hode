@@ -1,3 +1,30 @@
+Forked from https://github.com/usineur/hode (full README.txt included below)
+
+***
+HODE for Visual Studio 2019
+
+Needed libraries from vcpkg:
+vcpkg install sdl2
+vcpkg install getopt
+vcpkg install dirent
+
+Clone repo with submodules init'd:
+git clone --recurse-submodules https://github.com/beefviper/hode
+
+Suggested build steps:
+cd hode
+mkdir build
+cd build 
+cmake -DCMAKE_TOOLCHAIN_FILE=path_to_vcpkg_toolchain_file ..
+hode.sln
+
+In Visual Studio:
+Right click the hode project in the loaded solution and select Properties.
+Under Configuration Properties look for vcpkg sub-menu.
+Make sure Use Vcpkg is set to Yes.
+Build Solution.
+***
+
 
 hode README
 Release version: 0.2.9d
