@@ -28,6 +28,12 @@
 #define strcasecmp _stricmp
 #endif
 
+#if defined __WIN32__ || defined _WIN32 || defined _Windows
+#if !defined S_ISDIR
+#define S_ISDIR(m) (((m) & _S_IFDIR) == _S_IFDIR)
+#endif
+#endif
+
 #ifdef __SWITCH__
 #include <switch.h>
 #endif
