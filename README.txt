@@ -9,7 +9,7 @@ vcpkg install getopt
 vcpkg install dirent
 
 Clone repo with submodules init'd:
-git clone --recurse-submodules https://github.com/beefviper/hode
+git clone --recurse-submodules https://github.com/beefviper/hode-vs
 
 Suggested build steps:
 cd hode
