@@ -2,8 +2,12 @@
 #include <assert.h>
 #include <dirent.h>
 #include <sys/stat.h>
-//#include <sys/param.h>
-//#include <sys/unistd.h>
+
+#ifndef _MSC_VER
+#include <sys/param.h>
+#include <sys/unistd.h>
+#endif // !_MSC_VER
+
 #include "fs.h"
 #include "util.h"
 
