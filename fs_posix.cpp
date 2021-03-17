@@ -2,10 +2,19 @@
 #include <assert.h>
 #include <dirent.h>
 #include <sys/stat.h>
-#include <sys/param.h>
-#include <sys/unistd.h>
+//#include <sys/param.h>
+//#include <sys/unistd.h>
 #include "fs.h"
 #include "util.h"
+
+#ifdef _MSC_VER 
+// not #if defined(_WIN32) || defined(_WIN64)
+// because we have strncasecmp in mingw
+#define strncasecmp _strnicmp
+#define strcasecmp _stricmp
+#define MAXPATHLEN MAX_PATH
+#endif
+
 
 static const char *_suffixes[] = {
 	"hod.dem",
