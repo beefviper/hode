@@ -25,7 +25,12 @@ add_executable(${CMAKE_PROJECT_NAME}
 )
 
 # target_link_libraries(${CMAKE_PROJECT_NAME} ${SDL2_STATIC_LIBRARIES})
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE SDL2::SDL2 SDL2::SDL2main)
+if (MSVC)
+  target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE SDL2::SDL2 SDL2::SDL2main)
+else()
+  target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE SDL2)
+endif()
+
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${DIRENT_INCLUDE_DIRS})
 
 if(NSWITCH)
