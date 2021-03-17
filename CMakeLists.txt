@@ -12,6 +12,7 @@ endif(VITA)
 
 # pkg_check_modules(SDL2 sdl2 REQUIRED)
 find_package(SDL2 CONFIG REQUIRED)
+find_path(DIRENT_INCLUDE_DIRS "dirent.h")
 
 include_directories(
   ${SDL2_INCLUDE_DIRS}
@@ -25,6 +26,7 @@ add_executable(${CMAKE_PROJECT_NAME}
 
 # target_link_libraries(${CMAKE_PROJECT_NAME} ${SDL2_STATIC_LIBRARIES})
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE SDL2::SDL2 SDL2::SDL2main)
+target_include_directories(main PRIVATE ${DIRENT_INCLUDE_DIRS})
 
 if(NSWITCH)
   add_definitions(-D__SWITCH__)
