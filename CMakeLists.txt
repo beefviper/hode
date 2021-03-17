@@ -9,7 +9,8 @@ if(VITA)
   set(ENV{PKG_CONFIG_PATH} "$ENV{VITASDK}/arm-vita-eabi/lib/pkgconfig")
 endif(VITA)
 
-pkg_check_modules(SDL2 sdl2 REQUIRED)
+# pkg_check_modules(SDL2 sdl2 REQUIRED)
+find_package(SDL2 CONFIG REQUIRED)
 
 include_directories(
   ${SDL2_INCLUDE_DIRS}
@@ -21,9 +22,8 @@ add_executable(${CMAKE_PROJECT_NAME}
   ${SRC}
 )
 
-target_link_libraries(${CMAKE_PROJECT_NAME}
-  ${SDL2_STATIC_LIBRARIES}
-)
+# target_link_libraries(${CMAKE_PROJECT_NAME} ${SDL2_STATIC_LIBRARIES})
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE SDL2::SDL2 SDL2::SDL2main)
 
 if(NSWITCH)
   add_definitions(-D__SWITCH__)
