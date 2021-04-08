@@ -1,12 +1,15 @@
 Forked from https://github.com/usineur/hode (full README.txt included below)
 
 ***
-HODE for Visual Studio 2019
+Compiling HODE via Visual Studio 2019
+
+Install VCPKG:
+https://github.com/microsoft/vcpkg#quick-start-windows
 
 Needed libraries from vcpkg:
-vcpkg install sdl2
-vcpkg install getopt
-vcpkg install dirent
+vcpkg install sdl2:x64-windows
+vcpkg install getopt:x64-windows
+vcpkg install dirent:x64-windows
 
 Clone repo with submodules init'd:
 git clone --recurse-submodules https://github.com/beefviper/hode-vs
@@ -15,7 +18,7 @@ Suggested build steps:
 cd hode
 mkdir build
 cd build 
-cmake -DCMAKE_TOOLCHAIN_FILE=path_to_vcpkg_toolchain_file ..
+cmake -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows ..
 hode.sln
 
 In Visual Studio:
