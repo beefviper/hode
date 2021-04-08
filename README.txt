@@ -1,9 +1,9 @@
 Forked from https://github.com/usineur/hode (full README.txt included below)
 
 ***
-Compiling HODE via Visual Studio 2019
+Compiling hode via Visual Studio 2019
 
-Install VCPKG:
+Install vcpkg:
 https://github.com/microsoft/vcpkg#quick-start-windows
 
 Needed libraries from vcpkg:
