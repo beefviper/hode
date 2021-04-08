@@ -15,7 +15,7 @@ Clone repo with submodules init'd:
 git clone --recurse-submodules https://github.com/beefviper/hode-vs
 
 Suggested build steps:
-cd hode
+cd hode-vs
 mkdir build
 cd build 
 cmake -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows ..
